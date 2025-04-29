@@ -1,3 +1,8 @@
+---
+title: bibeiskill
+createTime: 2025/04/24 17:43:33
+permalink: /article/emukhg09/
+---
 # 日常开发积累
 
 ## 事件委托

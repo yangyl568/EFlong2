@@ -1,8 +1,95 @@
-import { viteBundler } from '@vuepress/bundler-vite'
-import { defaultTheme } from '@vuepress/theme-default'
-import { defineUserConfig } from 'vuepress'
+import { viteBundler } from "@vuepress/bundler-vite";
+import { defaultTheme } from "@vuepress/theme-default";
+import { defineUserConfig } from "vuepress";
 
 export default defineUserConfig({
   bundler: viteBundler(),
-  theme: defaultTheme(),
-})
+  theme: defaultTheme({
+    navbar: [
+      { text: '首页', link: '/' },
+      { text: '指南', link: '/guide/' },
+      { text: '积累', link: '/jilei/' },
+      { text: '八股文', link: '/baguwen/' },
+      // {
+      //     text: 'CSS 必备知识点', link: '/css'
+      // },
+      // {
+      //     text: 'javascript', link: '/javascript'
+      // },
+      // {
+      //     text: '前端工程化', link: '/engineering'
+      // },
+      // {
+      //     text: '前端框架', link: '/frame'
+      // },
+      // {
+      //   text: "前端知识点",
+      //   activeMatch: "/baguwen/",
+      //   items: [
+      //     { text: "CSS 必备知识点", link: "/baguwen/css" },
+      //     { text: "javascript", link: "/baguwen/javascript" },
+      //     { text: "前端工程化", link: "/baguwen/engineering" },
+      //     { text: "框架", link: "/baguwen/frame" },
+      //     { text: "Node", link: "/baguwen/node" },
+      //   ],
+      // },
+      // {
+      //   text: "动动手",
+      //   link: "/jilei/bibeiskill",
+      // },
+      // {
+      //     text: '扩展',
+      //     link: '/jilei/kuozhan'
+      // },
+      // {
+      //   text: "问题收集",
+      //   link: "/jilei/error",
+      // },
+      // {
+      //     text: 'Vue3项目',
+      //     link: '/vue3'
+      // },
+    ],
+    lastUpdated: "最后更新", // Last Updated | boolean
+    sidebar: {
+      '/guide/': [
+        {
+          text: '指南',
+          items: [
+            { text: '快速开始', link: '/guide/' },
+            // { text: '进阶指南', link: '/guide/advanced' }
+          ]
+        }
+      ]
+    },
+    sidebarDepth: 4,
+  }),
+  lang: "zh-CN",
+  title: "逍遥生-前端笔记",
+  description: "前端面试 前端面试题 css javascript vue js 前端博客",
+  head: [
+    [
+      "link",
+      {
+        rel: "icon",
+        href: "favicon.ico",
+      },
+    ],
+    [
+      "script",
+      {},
+      `var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ce5b5e7aef70331f91bf3366eeef2b2b";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+          `,
+    ],
+  ],
+  base: "/EFlong/",
+  host: "127.0.0.1",
+  port: "8888",
+  plugins: ["@vuepress/back-to-top", "@vuepress/nprogress"],
+});

@@ -1,3 +1,8 @@
+---
+title: vueyouhua
+createTime: 2025/04/24 17:43:17
+permalink: /article/prkb43xt/
+---
 # vue 项目性能优化(最强)
 
 > 原创自：https://juejin.im/post/5d548b83f265da03ab42471d

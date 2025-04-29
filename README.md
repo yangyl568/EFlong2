@@ -2,7 +2,7 @@
 
 - docs文件夹作为项目文档根目录，主要放置Markdown类型的文章和.vuepress文件夹。
 
-- .vuepress目录主要用于存放VuePress相关的文件。
+- .vuepress 目录主要用于存放VuePress相关的文件。
 
 - config.js是VuePress必要的配置文件，它导出y一个javascript对象。
 

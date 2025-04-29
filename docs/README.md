@@ -1,3 +1,7 @@
+---
+home: true
+---
+
 # Hi,You See See You, One Day Day
 
 ![An image](./public/imgs/read3.jpg)

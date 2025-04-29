@@ -1,3 +1,8 @@
+---
+title: javascript
+createTime: 2025/04/24 17:41:09
+permalink: /article/gl0mmfkz/
+---
 # javascript 高级
 
 ## 专业术语

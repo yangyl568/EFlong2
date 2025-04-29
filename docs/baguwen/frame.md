@@ -1,3 +1,8 @@
+---
+title: frame
+createTime: 2025/04/24 17:41:03
+permalink: /article/hhpphdcq/
+---
 # 框架篇
 
 ## 观察者模式-发布订阅模式

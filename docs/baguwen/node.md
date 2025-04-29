@@ -1,3 +1,8 @@
+---
+title: node
+createTime: 2025/04/24 17:41:13
+permalink: /article/r5cjcrbh/
+---
 # Node.js 基础相关
 
 查看一下 npm 当前版本 `npm -v`
