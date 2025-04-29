@@ -8,60 +8,29 @@ export default defineUserConfig({
     navbar: [
       { text: '首页', link: '/' },
       { text: '指南', link: '/guide/' },
-      { text: '积累', link: '/jilei/' },
-      { text: '八股文', link: '/baguwen/' },
-      // {
-      //     text: 'CSS 必备知识点', link: '/css'
-      // },
-      // {
-      //     text: 'javascript', link: '/javascript'
-      // },
-      // {
-      //     text: '前端工程化', link: '/engineering'
-      // },
-      // {
-      //     text: '前端框架', link: '/frame'
-      // },
-      // {
-      //   text: "前端知识点",
-      //   activeMatch: "/baguwen/",
-      //   items: [
-      //     { text: "CSS 必备知识点", link: "/baguwen/css" },
-      //     { text: "javascript", link: "/baguwen/javascript" },
-      //     { text: "前端工程化", link: "/baguwen/engineering" },
-      //     { text: "框架", link: "/baguwen/frame" },
-      //     { text: "Node", link: "/baguwen/node" },
-      //   ],
-      // },
-      // {
-      //   text: "动动手",
-      //   link: "/jilei/bibeiskill",
-      // },
-      // {
-      //     text: '扩展',
-      //     link: '/jilei/kuozhan'
-      // },
-      // {
-      //   text: "问题收集",
-      //   link: "/jilei/error",
-      // },
+      { text: '积累', link: '/jilei/',
+        children: [
+          { text: '必备技能', link: '/jilei/bibeiskill' },
+          { text: '扩展', link: '/jilei/kuozhan' },
+          { text: '问题收集', link: '/jilei/error' },
+        ],
+      },
+      { text: '八股文', link: '/baguwen/',
+        children: [
+          { text: 'CSS 必备知识点', link: '/baguwen/css' },
+          { text: 'javascript', link: '/baguwen/javascript' },
+          { text: '前端工程化', link: '/baguwen/engineering' },
+          { text: '框架', link: '/baguwen/frame' },
+          { text: 'Node', link: '/baguwen/node' },
+        ],
+       },
       // {
       //     text: 'Vue3项目',
       //     link: '/vue3'
       // },
     ],
     lastUpdated: "最后更新", // Last Updated | boolean
-    sidebar: {
-      '/guide/': [
-        {
-          text: '指南',
-          items: [
-            { text: '快速开始', link: '/guide/' },
-            // { text: '进阶指南', link: '/guide/advanced' }
-          ]
-        }
-      ]
-    },
+    sidebar: "auto",
     sidebarDepth: 4,
   }),
   lang: "zh-CN",

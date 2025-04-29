@@ -3,6 +3,7 @@ title: error
 createTime: 2025/04/24 17:43:38
 permalink: /article/4d19tfzr/
 ---
+
 # 错误信息和解决方案
 
 ## js 常见错误类型
@@ -72,3 +73,60 @@ try {
   alert("不管任何情况，都会来到我这里了"); // 厉害吧
 }
 ```
+
+## 切换 radio 的时候谷歌浏览器报：Blocked aria-hidden on an element xxx
+
+解决方案：
+
+```css
+div[aria-hidden="true"] {
+  display: none !important;
+}
+```
+
+## npm 包版本禁用提示或者删除
+
+```bash
+
+#废弃提示
+npm deprecate @webuy/lib@2.0.1-betax "此版本存在问题，请立即升级到 2.0.2 版本"
+
+#直接删除
+npm unpublish @webuy/lib@2.0.0-beta1 --force（废弃2.0.0-beta1版本）
+```
+
+## yarn 报 network connection. Retrying... 错误 等待 120s
+
+### 方案一
+
+把 yarn 改为 yarn install --non-interactive
+
+### 方案二
+
+yarn config set disable-self-update-check true（修改配置禁止检查更新）
+
+### 方案三
+
+把项目的 yarn.lock 删掉试试
+
+## vscode ide 配置
+
+```json
+"editor.cursorBlinking": "expand", // 设置光标闪烁样式为扩展
+"editor.cursorSmoothCaretAnimation": "on", // 启用光标平滑动画
+"editor.guides.bracketPairs": "active", // 显示括号配对指南
+```
+
+## npm 打包（基础）
+
+```sh
+npm run build:lib
+npm run release
+beta 的话就跟上 beta
+1.0.10-beta12  
+1.0.11
+```
+
+## nodejs 如果需要给某个接口设置独立的请求时长
+
+`this.ctx.req.setTimeout(60 * 60 * 1000);`
