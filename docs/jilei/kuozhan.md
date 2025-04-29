@@ -5,7 +5,7 @@ permalink: /article/vphzbmae/
 ---
 # 扩展视野相关信息
 
-![An image](./public/imgs/read.jpeg)
+![An image](./../public/imgs/read.jpeg)
 
 ## 万丈高楼 起于垒土
 

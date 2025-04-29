@@ -470,7 +470,7 @@ export class AppModule {}
 
 ```
 
-![配置module](./public/vue3/nestjs-Module.png)
+![配置module](./../public/vue3/nestjs-Module.png)
 
 ### 7. 配置 main.ts
 
