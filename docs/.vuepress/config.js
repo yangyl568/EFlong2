@@ -1,6 +1,7 @@
 import { viteBundler } from "@vuepress/bundler-vite";
 import { defaultTheme } from "@vuepress/theme-default";
 import { defineUserConfig } from "vuepress";
+import { copyCodePlugin } from '@vuepress/plugin-copy-code';
 
 export default defineUserConfig({
   bundler: viteBundler(),
@@ -27,8 +28,7 @@ export default defineUserConfig({
       },
     ],
     lastUpdated: "最后更新", // Last Updated | boolean
-    contributors: 'Mr.Yang', // Contributors | boolean
-    // sidebar: "auto",
+    contributors: false, // Contributors | boolean
     sidebarDepth: 2,
   }),
   lang: "zh-CN",
@@ -58,5 +58,5 @@ export default defineUserConfig({
   base: "/EFlong2/",
   host: "127.0.0.1",
   port: "8888",
-  plugins: ["@vuepress/back-to-top", "@vuepress/nprogress"],
+  plugins: ["@vuepress/back-to-top", "@vuepress/nprogress", copyCodePlugin()],
 });

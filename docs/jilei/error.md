@@ -130,3 +130,5 @@ beta 的话就跟上 beta
 ## nodejs 如果需要给某个接口设置独立的请求时长
 
 `this.ctx.req.setTimeout(60 * 60 * 1000);`
+
+## 本地 git push 很慢
