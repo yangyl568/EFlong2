@@ -7,14 +7,7 @@ export default defineUserConfig({
   theme: defaultTheme({
     navbar: [
       { text: '首页', link: '/' },
-      { text: '指南', link: '/guide/' },
-      { text: '积累', link: '/jilei/',
-        children: [
-          { text: '必备技能', link: '/jilei/bibeiskill' },
-          { text: '扩展', link: '/jilei/kuozhan' },
-          { text: '问题收集', link: '/jilei/error' },
-        ],
-      },
+      // { text: '指南', link: '/guide/' },
       { text: '八股文', link: '/baguwen/',
         children: [
           { text: 'CSS 必备知识点', link: '/baguwen/css' },
@@ -23,15 +16,20 @@ export default defineUserConfig({
           { text: '框架', link: '/baguwen/frame' },
           { text: 'Node', link: '/baguwen/node' },
         ],
-       },
-      // {
-      //     text: 'Vue3项目',
-      //     link: '/vue3'
-      // },
+      },
+      { text: '积累', link: '/jilei/',
+        children: [
+          { text: '必备技能', link: '/jilei/bibeiskill' },
+          { text: '扩展', link: '/jilei/kuozhan' },
+          { text: '问题收集', link: '/jilei/error' },
+          { text: 'Vue3项目', link: '/jilei/vue3' },
+        ],
+      },
     ],
     lastUpdated: "最后更新", // Last Updated | boolean
-    sidebar: "auto",
-    sidebarDepth: 4,
+    contributors: 'Mr.Yang', // Contributors | boolean
+    // sidebar: "auto",
+    sidebarDepth: 2,
   }),
   lang: "zh-CN",
   title: "逍遥生-前端笔记",

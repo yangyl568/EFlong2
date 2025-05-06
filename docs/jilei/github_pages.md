@@ -1,6 +1,6 @@
-# 如何免费把 vuepress 部署到 github pages 上
+# VuePress + Github Actions 自动化部署
 
-> 最终效果就是通过 gihub 自动化部署当前 vuepress 文档项目，并免费获取网站进行访问。
+> 最终效果就是通过 gihub pages 自动化部署当前 vuepress 文档项目，并免费获取网站进行访问。
 
 ## 第一步 搭建自己的 vuepress 项目
 
@@ -8,7 +8,13 @@
 
 ## 第二步 配置密钥
 
-打开自己的 [tokens](https://github.com/settings/tokens) 页面，点击 Generate new token 生成一个 token。
+1、打开自己的 [tokens](https://github.com/settings/tokens) 页面，点击 Generate new token 生成一个 token。
+
+2、保存好自己的 tokens ，后面需要用到。
+
+3、打开自己的代码仓库找到 Settings 选项卡，点击 Secrets 选项卡，点击 New secret 选项卡，输入密钥名称为 GH_TOKEN，密钥值为自己的 tokens，点击 Add secret。
+
+![Secrets](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/cca1c670b9494b0285bdbb6ec7381bd5~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?)
 
 ## 第三步 docs.yml 配置
 
@@ -112,6 +118,8 @@ git push origin main
 - Branch: gh-pages / (root)
 
 4、点击 Save
+
+![Build and deployment](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/697fd739921a45409816078a424cca0f~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp?)
 
 5、稍等片刻，刷新当面页面，就可以看到自己的 vuepress 网站地址了！
 

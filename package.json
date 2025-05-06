@@ -2,7 +2,7 @@
   "name": "EFlong2",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "yuquan",
+  "author": "逍遥生",
   "license": "MIT",
   "engines": {
     "node": ">=23.8.0",
