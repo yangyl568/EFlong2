@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # 使用高权限 Token
+          token: ${{ secrets.EFLONG_TOKEN }}  # 使用高权限 Token
 
       - name: Debug on failure
         if: ${{ failure() }}
@@ -61,4 +61,4 @@ jobs:
           build_dir: docs/.vuepress/dist
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.EFLONG_TOKEN }}
