@@ -4,27 +4,21 @@ on:
   # 每当 push 到 main 分支时触发部署
   push:
     branches: [main]
-  # 手动触发部署
-  workflow_dispatch:
+  paths:
+      - 'docs/**'  # 仅当 docs 目录变更时触发
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write   # 授予写入权限
+      pages: write      # 如果使用 GitHub Pages 专用部署
+      id-token: write   # 如果使用 OIDC 身份验证
+
     steps:
+      # 步骤 1: 检出代码
       - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.EFLONG_TOKEN }}  # 使用高权限 Token
-
-      - name: Debug on failure
-        if: ${{ failure() }}
-        run: git config --list
-  docs:
-    runs-on: ubuntu-latest
-
-    steps:
       - uses: actions/checkout@v4
         with:
           # “最近更新时间” 等 git 日志相关信息，需要拉取全部提交记录
@@ -49,6 +43,8 @@ jobs:
       # 运行构建脚本
       - name: 构建 VuePress 站点
         run: pnpm docs:build
+        env:
+          NODE_OPTIONS: '--max_old_space_size=4096'  # 内存不足时增加限制
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
@@ -59,6 +55,7 @@ jobs:
           target_branch: gh-pages
           # 部署目录为 VuePress 的默认输出目录
           build_dir: docs/.vuepress/dist
+          clean: true  # 清理旧文件
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
-          GITHUB_TOKEN: ${{ secrets.EFLONG_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
