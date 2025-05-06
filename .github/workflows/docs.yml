@@ -8,6 +8,19 @@ on:
   workflow_dispatch:
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # 使用高权限 Token
+
+      - name: Debug on failure
+        if: ${{ failure() }}
+        run: git config --list
   docs:
     runs-on: ubuntu-latest
 
