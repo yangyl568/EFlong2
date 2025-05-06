@@ -25,6 +25,7 @@ jobs:
         with:
           # 选择要使用的 node 版本
           node-version: 22
+          pnpm-version: 10
           # 缓存 pnpm 依赖
           cache: pnpm
 
