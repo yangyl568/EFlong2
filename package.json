@@ -5,7 +5,8 @@
   "author": "yuquan",
   "license": "MIT",
   "engines": {
-    "node": ">=23.8.0"
+    "node": ">=23.8.0",
+    "pnpm": ">=10.10.0"
   },
   "scripts": {
     "docs:dev": "vuepress dev docs",
