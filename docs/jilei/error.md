@@ -6,6 +6,12 @@ permalink: /article/4d19tfzr/
 
 # 错误信息和解决方案
 
+## yarn 很慢 info There appears to be trouble with your network connection. Retrying
+
+yarn config set disable-self-update-check true（修改配置禁止检查更新）
+
+![connection-Retrying](../public/imgs/peitu/connection-Retrying.png)
+
 ## js 常见错误类型
 
 ### 一、SyntaxError JS 引擎解析代码时发生的语法错误
@@ -166,7 +172,7 @@ beta 的话就跟上 beta
 
 错误原因：业务项目中把 request 底层函数封装了，但是丢失了字段
 
-解决方案：需要在项目响应函数的 reject 里传入isAxiosError，可以从error里取同名字段
+解决方案：需要在项目响应函数的 reject 里传入 isAxiosError，可以从 error 里取同名字段
 
 ## Cannot read properties of undefined (reading 'length')
 
@@ -178,8 +184,8 @@ http 接口报错，返回 undefined 导致，需要在请求包里做兼容处�
 
 ## Cannot read properties of null (reading 'forEach')
 
-![alt text](forEach.png)
+![alt text](../public/imgs/peitu/forEach.png)
 
 ## TypeError: Cannot read properties of null (reading 'map')
 
-![alt text](map.png)
+![alt text](../public/imgs/peitu/map.png)
