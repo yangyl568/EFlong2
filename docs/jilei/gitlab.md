@@ -20,7 +20,7 @@ docker pull yrzr/gitlab-ce-arm64v8:latest
 
 这样的代表下载成功了！
 
-![docker pull](docker-pull.png)
+![docker pull](../public/imgs/peitu/docker-pull.png)
 
 注意 📢：这里很有可能会遇到下载不下来的问题。一般都是因为网络问题导致的，所以需要配置下 docker 的镜像源地址。
 
@@ -81,7 +81,7 @@ chmod -R 777 ~/gitlab # 仅用于测试环境，生产环境需严格限制权�
 进入容器修改配置：
 
 ```bash
-docker exec -it gitlab /bin/bash
+docker exec -it gitlab-ce /bin/bash
 vi /etc/gitlab/gitlab.rb
 ```
 
@@ -91,6 +91,8 @@ vi /etc/gitlab/gitlab.rb
 external_url 'http://<你的Mac本地IP>:9980'  # 如 http://192.168.1.100:9980
 gitlab_rails['gitlab_ssh_host'] = '<你的Mac本地IP>'  # 如 192.168.1.100
 gitlab_rails['gitlab_shell_ssh_port'] = 9922
+nginx['listen_addresses'] = ['0.0.0.0']  # 允许所有 IP 访问
+nginx['listen_port'] = 80                # 确保端口正确
 ```
 
 应用配置并重启：
@@ -99,6 +101,43 @@ gitlab_rails['gitlab_shell_ssh_port'] = 9922
 gitlab-ctl reconfigure
 gitlab-ctl restart
 exit
+```
+
+#### 问题：这里配置并重启之后连接访问不了了
+
+效果是: 无法访问此网站
+
+真的很神奇，原本没配置的时候还是可以访问的。
+
+**解决方案**
+验证 GitLab 服务监听地址
+进入容器检查 Nginx 是否监听所有地址（0.0.0.0:80）：
+
+```bash
+docker exec -it gitlab-ce netstat -tuln | grep 80
+```
+
+预期输出：
+
+```bash
+tcp   0   0 0.0.0.0:80    0.0.0.0:*     LISTEN
+若输出为 127.0.0.1:80：
+```
+
+说明服务仅绑定到容器本地地址，需修改配置：
+
+编辑 /etc/gitlab/gitlab.rb：
+
+```bash
+nginx['listen_addresses'] = ['0.0.0.0']  # 允许所有 IP 访问
+nginx['listen_port'] = 80                # 确保端口正确
+```
+
+重新配置并重启：
+
+```bash
+gitlab-ctl reconfigure
+gitlab-ctl restart nginx
 ```
 
 ### 5.检查是否可以访问
@@ -199,8 +238,8 @@ docker exec -it gitlab-ce gitlab-rails runner "user = User.find_by(username: 'ro
 
 现在你可以成功修改 GitLab 用户的密码了！
 
-![gitlab-home](gitlab-home.png)
+![gitlab-home](../public/imgs/peitu/gitlab-home.png)
 
 进入 Preferences → Language，选择 简体中文。 保存并刷新页面即可
 
-![profile-preferences](profile-preferences.png)
+![profile-preferences](../public/imgs/peitu/profile-preferences.png)
