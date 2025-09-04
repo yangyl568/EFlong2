@@ -95,6 +95,8 @@ nginx['listen_addresses'] = ['0.0.0.0']  # 允许所有 IP 访问
 nginx['listen_port'] = 80                # 确保端口正确
 ```
 
+注意：:wq! 保存并退出但是报错:Press ENTER or type command to continue
+
 应用配置并重启：
 
 ```bash
@@ -155,7 +157,7 @@ gitlab-ctl restart nginx
 
 #### **方法 1：通过 GitLab Rails Console 修改密码**
 
-1. **进入 GitLab Rails Console**（在容器内执行）：
+1. **进入 GitLab Rails Console**（在容器内执行）：耐心等待一会
 
    ```bash
    docker exec -it gitlab-ce gitlab-rails console
@@ -167,13 +169,13 @@ gitlab-ctl restart nginx
 
    ```ruby
    user = User.find_by(username: 'root')  # 或 email: 'admin@example.com'
-   user.password = 'admin123!'           # 新密码
-   user.password_confirmation = 'admin123!'
+   user.password = '数字+字母!'           # 新密码
+   user.password_confirmation = '数字+字母!'
    user.save!
    ```
 
    - **如果成功**，会返回 `true`。
-   - **如果失败**，检查错误信息（如密码太短）。
+   - **否则失败**，检查错误信息（如密码太短）。
 
 3. **退出 Console**：
 
