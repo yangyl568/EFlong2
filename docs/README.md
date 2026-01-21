@@ -3,7 +3,7 @@ home: true
 config:
   - type: banner
     full: true
-    banner: ./public/imgs/read3.jpg
+    banner: https://s41.ax1x.com/2026/01/21/pZcEc1H.jpg
     title: 逍遥生-前端笔记
     description: 记录前端成长的点点滴滴，面试复习，技术积累。
     hero:
@@ -67,4 +67,4 @@ config:
 
 如果你对前端技术感兴趣，或者在学习过程中遇到问题，欢迎添加我的微信一起交流。
 
-![我的微信](https://z3.ax1x.com/2021/04/28/gPa8PI.png)
+![我的微信](https://s41.ax1x.com/2026/01/21/pZcE69e.png)
