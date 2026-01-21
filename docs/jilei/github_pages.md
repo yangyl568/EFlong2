@@ -1,3 +1,8 @@
+---
+title: github_pages
+createTime: 2025/12/07 21:28:12
+permalink: /article/ymyczg4v/
+---
 # VuePress + Github Actions 自动化部署
 
 > 最终效果就是通过 gihub pages 自动化部署当前 vuepress 文档项目，并免费获取网站进行访问。

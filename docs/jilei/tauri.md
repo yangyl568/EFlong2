@@ -1,3 +1,8 @@
+---
+title: tauri
+createTime: 2025/12/07 21:28:12
+permalink: /article/9kwg7ueb/
+---
 # 扔掉 Electron，拥抱基于 Rust 开发的 Tauri
 
 [Tauri 官网](https://tauri.app/)
