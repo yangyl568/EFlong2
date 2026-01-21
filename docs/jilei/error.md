@@ -168,7 +168,9 @@ beta 的话就跟上 beta
 
 不用修复，统计过滤。浏览器兼容问题。
 
-## Network Error、{"msg":"request_error","status":0}
+## Network Error
+
+`{"msg":"request_error","status":0}`
 
 错误原因：业务项目中把 request 底层函数封装了，但是丢失了字段
 
