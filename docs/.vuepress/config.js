@@ -5,7 +5,10 @@ import { plumeTheme } from "vuepress-theme-plume";
 export default defineUserConfig({
   bundler: viteBundler(),
   theme: plumeTheme({
+    hostname: 'https://yangyl568.github.io/EFlong2/',
     notes: false,
+    // 强制禁用自动侧边栏以规避索引 18 的 Bug，改为手动或使用默认行为
+    autoFrontmatter: false,
     navbar: [
       { text: '首页', link: '/', icon: 'material-symbols:home-outline' },
       { 
@@ -33,6 +36,19 @@ export default defineUserConfig({
     footer: {
       message: '个人前端笔记 · 记录成长',
       copyright: 'Copyright © 2024-present 逍遥生',
+    },
+    // 显式配置侧边栏深度，尝试规避渲染问题
+    sidebarDepth: 2,
+    plugins: {
+      shiki: {
+        languages: ['javascript', 'typescript', 'vue', 'bash', 'json', 'css', 'markdown'],
+        theme: 'vitesse-dark',
+      },
+      markdownEnhance: {
+        container: true,
+        tabs: true,
+        codetabs: true,
+      },
     },
   }),
   lang: "zh-CN",

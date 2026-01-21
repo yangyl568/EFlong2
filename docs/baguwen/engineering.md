@@ -155,7 +155,7 @@ post 请求发送 form 数据和 json 数据的示例：
     //    调用自己写的ajax函数
     ajax("get","http://localhost:3000/users",{
         name:"zs",
-        age:45
+        age:18
     },function (a){
         console.log(a);
     });

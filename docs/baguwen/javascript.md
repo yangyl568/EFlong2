@@ -361,14 +361,14 @@ function myNew(fn, ...args) {
   return resObj instanceof Object ? resObj : newobj;
 }
 // 测试
-function Parsen() {
+function Person() {
   this.name = "龙哥";
-  this.age = "18";
+  this.age = 18;
 }
-Parsen.prototype.getName = function () {
+Person.prototype.getName = function () {
   return this.name;
 };
-var parsen = myNew(Parsen);
+var person = new Person();
 ```
 
 ### 原型和原型链

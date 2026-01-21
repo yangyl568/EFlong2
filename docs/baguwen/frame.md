@@ -77,7 +77,7 @@ Vue 实现这种数据双向绑定的效果，需要三大模块：
 
 ### mixin
 
-![mixin.png](https://s4.ax1x.com/2021/12/15/TpIBkD.png5)
+![mixin.png](https://s4.ax1x.com/2021/12/15/TpIBkD.png)
 
 ### 脚手架的 使用
 
