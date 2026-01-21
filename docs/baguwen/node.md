@@ -3,6 +3,7 @@ title: node
 createTime: 2025/04/24 17:41:13
 permalink: /article/r5cjcrbh/
 ---
+
 # Node.js 基础相关
 
 查看一下 npm 当前版本 `npm -v`
@@ -111,8 +112,7 @@ npm run script1.js && npm run script2.js
 1. 先去[注册账号](https://www.npmjs.com/login)，然后 执行命令： npm adduser #根据提示输入用户名密码即可
 2. 使用命令发布自己的包： npm publish
 
-记得 配置一个 .npmignore 文件来排除垃圾文件。可以直接 复制 .gitignore
-3. 发布成功之后，就可以使用了： npm install xxxxx
+记得 配置一个 .npmignore 文件来排除垃圾文件。可以直接 复制 .gitignore 3. 发布成功之后，就可以使用了： npm install xxxxx
 
 - 关于 npm 包更新
 

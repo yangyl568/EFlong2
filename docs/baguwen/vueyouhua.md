@@ -3,6 +3,7 @@ title: vueyouhua
 createTime: 2025/04/24 17:43:17
 permalink: /article/prkb43xt/
 ---
+
 # vue 项目性能优化(最强)
 
 > 原创自：https://juejin.im/post/5d548b83f265da03ab42471d
@@ -134,8 +135,8 @@ Vue 项目中用到的分析工具：`webpack-bundle-analyzer`
 
 ```js
 if (config.build.bundleAnalyzerReport) {
-  var BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
-    .BundleAnalyzerPlugin;
+  var BundleAnalyzerPlugin =
+    require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
   webpackConfig.plugins.push(new BundleAnalyzerPlugin());
 }
 ```
@@ -174,4 +175,4 @@ Chrome 的 Performance 面板可以录制一段时间内的 js 执行细节及�
 
 3、路由懒加载 import('....')
 
-4、DNS 缓存、预加载策略 preload: 预先加载资源  prefetch：预判加载资源
+4、DNS 缓存、预加载策略 preload: 预先加载资源 prefetch：预判加载资源

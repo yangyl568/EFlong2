@@ -3,6 +3,7 @@ title: javascript
 createTime: 2025/04/24 17:41:09
 permalink: /article/gl0mmfkz/
 ---
+
 # javascript 高级
 
 ## 专业术语
@@ -23,7 +24,7 @@ permalink: /article/gl0mmfkz/
 
 ### 栈 stack
 
-又名堆栈，作为一个 **先进后出** 的数据结构。（**注意：这里的堆栈本身就是栈，只是换了个抽象的名字**。）  
+又名堆栈，作为一个 **先进后出** 的数据结构。（**注意：这里的堆栈本身就是栈，只是换了个抽象的名字**。）
 
 它是一种运算受限的线性表。其限制是仅允许在表的一端进行插入和删除运算。这一端被称为栈顶，相对地，把另一端称为栈底。
 
@@ -147,7 +148,7 @@ let func0 = (function () {
   console.log("函数的表达式形态");
 })(
   //函数的表达式形态 之二
-  function func1() {}
+  function func1() {},
 );
 
 //函数的嵌套形态
@@ -330,7 +331,7 @@ func.bind(thisArg, param1, param2, ...) // 返回func的拷贝，并拥有指定
 3. 在构造函数中，类中(函数体中)出现的 this.xxx = xxx 中的 **this 是当前类的⼀个实例**
 4. call、apply 时，this 是第⼀个参数。bind 要优于 call/apply 哦，**call 参数多，apply 参数少**
 5. 箭头函数没有⾃⼰的 this，需要看其外层是否有函数，**如果有，外层函数的 this 就是内部箭头函数**
-**的 this，如果没有，则 this 是 window**
+   **的 this，如果没有，则 this 是 window**
 
 ## 面向对象
 
@@ -363,7 +364,7 @@ function myNew(fn, ...args) {
 // 测试
 function Person() {
   this.name = "龙哥";
-  this.age = 18;
+  this.age = "20";
 }
 Person.prototype.getName = function () {
   return this.name;
@@ -388,7 +389,7 @@ Javascript 对象从原型继承方法和属性，而`Object.prototype`在继承
 
 - prototype: 函数的一个属性：是一个对象 {}
 - **proto**: 对象 Object 的一个属性：对象 {}
-- **每个对象实例都有一个 \_\_*****proto\_\_*** ，它指向构造函数的 prototype
+- **每个对象实例都有一个 \_\_\*\*\***proto\_\_\*\*\* ，它指向构造函数的 prototype
 - **以上关系可以使用 console.log 去测试**
 
 ```javascript
@@ -909,7 +910,7 @@ function debounce(fn, awit = 50) {
 }
 const ceshiFnDeb = debounce(
   () => console.log("ceshiFnDeb防抖函数执行了"),
-  1000
+  1000,
 );
 document.addEventListener("scroll", ceshiFnDeb);
 ```
@@ -940,7 +941,6 @@ setInterval(ceshiFn, 10);
 ```
 
 **不过市面上比较全的还是 lodash 的防抖节流函数**
-\*\*
 
 ## 事件
 
@@ -1126,7 +1126,7 @@ UMD 先判断是否支持 Node.js 的模块（exports）是否存在，存在则
 > 正则表达式可以从一个基础字符串中根据一定的匹配模式替换文本中的字符串、验证表单、提取字符串等等。
 
 最全正则表达式[链接](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
-身份证号(15 位、18 位数字)：^\d{15}|\d{18}
+身份证号(15 位、18 位数字)：`^\d{15}|\d{18}`
 
 正则表达式主要依赖于元字符。
 
@@ -1141,7 +1141,7 @@ UMD 先判断是否支持 Node.js 的模块（exports）是否存在，存在则
 | {n,m}  | 匹配 num 个大括号之间的字符 (n <= num <= m).                 |
 | (xyz)  | 字符集，匹配与 xyz 完全相等的字符串.                         |
 | &#124; | 或运算符，匹配符号前或后的字符.                              |
-|   \\   | 转义字符,用于匹配一些保留的字符 `[ ] ( ) { } . \* + ? ^ $ \  |`|
+|   \\   | 转义字符,用于匹配一些保留的字符 `[ ] ( ) { } . \* + ? ^ $ \  | `   |
 |   ^    | 从开始行开始匹配.                                            |
 |   $    | 从末端开始匹配.                                              |
 
