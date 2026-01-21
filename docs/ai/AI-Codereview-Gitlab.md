@@ -1,3 +1,8 @@
+---
+title: AI-Codereview-Gitlab
+createTime: 2025/12/07 21:28:12
+permalink: /article/4mlhac7o/
+---
 # AI-Codereview-Gitlab 使用教程
 
 ## 查看步骤
