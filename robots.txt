@@ -1,0 +1,4 @@
+Sitemap: https://yangyl568.github.io/EFlong2/EFlong2/sitemap.xml
+
+User-agent:*
+Disallow:
