@@ -12,7 +12,7 @@ export default defineUserConfig({
     navbar: [
       { text: '首页', link: '/', icon: 'material-symbols:home-outline' },
       { 
-        text: '八股文', 
+        text: '前端基础', 
         icon: 'material-symbols:article-outline',
         items: [
           { text: 'CSS 必备知识点', link: '/baguwen/css' },
@@ -32,9 +32,16 @@ export default defineUserConfig({
           { text: 'Vue3项目', link: '/jilei/vue3' },
         ],
       },
+      {
+        text: 'AI',
+        icon: 'material-symbols:article-outline',
+        items: [
+          { text: 'AI Agent', link: '/ai/ai-chat-bot' },
+        ],
+      },
     ],
     footer: {
-      message: '个人前端笔记 · 记录成长',
+      message: '个人前端博客 · 记录成长',
       copyright: 'Copyright © 2024-present 逍遥生',
     },
     // 显式配置侧边栏深度，尝试规避渲染问题
@@ -52,8 +59,8 @@ export default defineUserConfig({
     },
   }),
   lang: "zh-CN",
-  title: "逍遥生-前端笔记",
-  description: "前端面试 前端面试题 css javascript vue js 前端博客",
+  title: "逍遥生-前端博客",
+  description: "css javascript vue js 前端博客",
   head: [
     ["link", { rel: "icon", href: "/EFlong2/favicon.ico" }],
   ],
