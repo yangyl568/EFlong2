@@ -33,13 +33,13 @@ export default defineUserConfig({
           { text: 'Vue3项目', link: '/jilei/vue3' },
         ],
       },
-      {
-        text: 'AI',
-        icon: 'material-symbols:article-outline',
-        items: [
-          { text: 'AI Agent', link: '/ai/ai-chat-bot' },
-        ],
-      },
+      // {
+      //   text: 'AI',
+      //   icon: 'material-symbols:article-outline',
+      //   items: [
+      //     { text: 'AI Agent', link: '/ai/ai-chat-bot' },
+      //   ],
+      // },
     ],
     footer: {
       message: '个人前端博客 · 记录成长',
