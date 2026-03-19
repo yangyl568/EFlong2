@@ -9,6 +9,7 @@ export default defineUserConfig({
     notes: false,
     // 强制禁用自动侧边栏以规避索引 18 的 Bug，改为手动或使用默认行为
     autoFrontmatter: false,
+    lastUpdated: false,
     navbar: [
       { text: '首页', link: '/', icon: 'material-symbols:home-outline' },
       { 

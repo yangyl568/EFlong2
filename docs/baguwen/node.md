@@ -131,44 +131,34 @@ $ npm version major
 
 ### 本地开发的 npm 包如何调试
 
-在本地开发的模块包的时候，可以使用 `npm link` 调试，将模块链接到对应的运行项目中去，方便地对模块进行调试和测试。具体使用步骤如下
+在本地开发的模块包的时候，可以使用 `npm link` 软链接，调试，将模块链接到对应的运行项目中去，方便地对模块进行调试和测试。具体使用步骤如下
 
 - 假如我的项目是 `koalaNpmStudy`，假如我的 npm 模块包名称是 `npm-ikoala`
 - 进入到 模块包 `npm-ikoala` 目录中，执行 `npm link`
 - 在自己的项目 `koalaNpmStudy` 中创建连接执行 `npm link npm-ikoala`
 - 在自己项目的 `node_module` 中会看到链接过来的模块包，然后就可以像使用其他的模块包一样使用它了。
 - 调试结束后可以使用 `npm unlink` 取消关联
-  > npm link 主要做了两件事：
-  > 为目标 npm 模块创建软链接，将其链接到全局 node 模块安装路径 /usr/local/lib/node_modules/。
-  > 为目标 npm 模块的可执行 bin 文件创建软链接，将其链接到全局 node 命令安装路径 /usr/local/bin/。
 
 ## Node.js 常用模块
 
 ### Global 模块
 
-全局共享的不需要导入模块 即可使用。
-常用的属性:
-    **dirname : 文件所在的文件夹路径
-    **filename : 文件所在的路径
-    require() : 导入需要的模块
-    module : 自定义模块时用到
-    exports : 自定义模块时用到
+全局共享的不需要导入模块 即可使用。常用的属性:
+- **dirname : 文件所在的文件夹路径
+- **filename : 文件所在的路径
+- require() : 导入需要的模块
+- module : 自定义模块时用到
+- exports : 自定义模块时用到
 
 ### fs 文件操作模块
 
 fs 模块的常见方法(所有的读方法，文件必须存在，不存在就会报错，所有的写方法，如果文件不存在，则创建该文件)：
 
-### util 模块
-
-1. util.promisify(fn); //十分常用
-1. util.inherits(Child, Parent);
-1. util.isArray([]) util.isString();
-
 ### path  简化路径相关操作，并提升代码可读性
 
-- **path.resolve([...paths])：**方法将一系列路径或路径段解析为绝对路径。
+- `path.resolve([...paths])：` 方法将一系列路径或路径段解析为绝对路径。
 
-- **path.basename(path[, ext])：**该方法返回路径的最后一部分。目录分隔符"/"会被自动忽略。
+- `path.basename(path[, ext])：`该方法返回路径的最后一部分。目录分隔符"/"会被自动忽略。
 
 ```bash
 
@@ -179,12 +169,18 @@ path.basename('/foo/bar/baz/asdf/quux.html', '.html');
 // Returns: 'quux'
 ```
 
-### http 提供两种使用方式
+## 为什么选择使用 Node.js？
 
-- 作为服务端使用时，创建一个 HTTP 服务器，监听 HTTP 客户端请求并返回响应。
+1. 技术栈统一使用 JS 快速开发全栈
+2. 异步非阻塞 I/O ，高并发场景下性能比较好
+3. 运行在 chorme V8 引擎上的，C++写的性能很不错
 
-- 作为客户端使用时，发起一个 HTTP 客户端请求，获取服务端响应。
+## Nodejs 运行机制
 
-## Koa2 基础 （Request、Response、Application、Context）
+1. V8 引擎：负责解析执行 JS 代码，但本身是单线程的
+2. libuv 库: Node.js 的灵魂，异步 I/O 库，实现了 事件循环、线程池、异步网络，是 Nodejs 异步非阻塞的核心；
 
-[《Koa2 进阶学习笔记》已完结](https://chenshenhai.com/koa2-note)
+## 捕获异常怎么做的
+
+- 全局监听：同步 process.on('uncaughException')和 异步 unhandleRejection 防止进程崩掉
+- 单个的话跟 JS 一样的
