@@ -1,6 +1,5 @@
 ---
 title: prompt
-createTime: 2026/01/20 11:13:09
 permalink: /article/uq0jisbd/
 ---
 # 提示词工程指南

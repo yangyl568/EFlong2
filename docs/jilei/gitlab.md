@@ -1,6 +1,5 @@
 ---
 title: gitlab
-createTime: 2026/01/20 11:13:40
 permalink: /article/cms0rg9l/
 ---
 # 搭建 gitlab 环境

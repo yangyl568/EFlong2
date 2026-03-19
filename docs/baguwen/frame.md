@@ -1,6 +1,5 @@
 ---
 title: frame
-createTime: 2025/04/24 17:41:03
 permalink: /article/hhpphdcq/
 ---
 # 框架篇

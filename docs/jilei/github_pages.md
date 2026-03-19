@@ -1,6 +1,5 @@
 ---
 title: github_pages
-createTime: 2025/12/07 21:28:12
 permalink: /article/ymyczg4v/
 ---
 # VuePress + Github Actions 自动化部署
