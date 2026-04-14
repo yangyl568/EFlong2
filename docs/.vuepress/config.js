@@ -21,6 +21,7 @@ export default defineUserConfig({
           { text: '前端工程化', link: '/baguwen/engineering' },
           { text: '框架', link: '/baguwen/frame' },
           { text: 'Node', link: '/baguwen/node' },
+          { text: 'ES6', link: '/baguwen/es6' },
           { text: '小程序优化', link: '/jilei/miniprogram' },
         ],
       },
@@ -29,15 +30,16 @@ export default defineUserConfig({
         icon: 'material-symbols:collections-bookmark-outline',
         items: [
           { text: '必备技能', link: '/jilei/bibeiskill' },
-          // { text: '扩展', link: '/jilei/kuozhan' },
+          { text: 'npm发布', link: '/jilei/npm发布' },
+          { text: '规范整理', link: '/jilei/规范整理' },
           { text: '问题收集', link: '/jilei/error' },
           { text: 'qiankun微应用', link: '/jilei/qiankun' },
           { text: 'electron相关', link: '/jilei/electron' },
           { text: '搭建 gitlab 环境', link: '/jilei/gitlab' },
           { text: 'Vue3VSReact', link: '/jilei/Vue3VSReact' },
-          // ECS部署项目
           { text: 'ECS部署项目', link: '/jilei/ECS部署项目' },
-          // { text: 'Vue3项目', link: '/jilei/vue3' },
+          // { text: 'whistle', link: '/jilei/whistle' },
+          // { text: 'jenkins多分支', link: '/jilei/jenkins多分支' },
         ],
       },
       // {
