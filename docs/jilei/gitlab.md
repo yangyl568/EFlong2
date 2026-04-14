@@ -1,8 +1,9 @@
 ---
-title: gitlab
+title: 搭建 gitlab 环境
 permalink: /article/cms0rg9l/
 ---
-# 搭建 gitlab 环境
+
+<!-- # 搭建 gitlab 环境 -->
 
 ## mac m1 系统搭建
 

@@ -13,7 +13,7 @@ export default defineUserConfig({
     navbar: [
       { text: '首页', link: '/', icon: 'material-symbols:home-outline' },
       { 
-        text: '前端基础', 
+        text: '前端学习', 
         icon: 'material-symbols:article-outline',
         items: [
           { text: 'CSS 必备知识点', link: '/baguwen/css' },
@@ -21,6 +21,7 @@ export default defineUserConfig({
           { text: '前端工程化', link: '/baguwen/engineering' },
           { text: '框架', link: '/baguwen/frame' },
           { text: 'Node', link: '/baguwen/node' },
+          { text: '小程序优化', link: '/jilei/miniprogram' },
         ],
       },
       { 
@@ -28,9 +29,15 @@ export default defineUserConfig({
         icon: 'material-symbols:collections-bookmark-outline',
         items: [
           { text: '必备技能', link: '/jilei/bibeiskill' },
-          { text: '扩展', link: '/jilei/kuozhan' },
+          // { text: '扩展', link: '/jilei/kuozhan' },
           { text: '问题收集', link: '/jilei/error' },
-          { text: 'Vue3项目', link: '/jilei/vue3' },
+          { text: 'qiankun微应用', link: '/jilei/qiankun' },
+          { text: 'electron相关', link: '/jilei/electron' },
+          { text: '搭建 gitlab 环境', link: '/jilei/gitlab' },
+          { text: 'Vue3VSReact', link: '/jilei/Vue3VSReact' },
+          // ECS部署项目
+          { text: 'ECS部署项目', link: '/jilei/ECS部署项目' },
+          // { text: 'Vue3项目', link: '/jilei/vue3' },
         ],
       },
       // {
