@@ -42,6 +42,7 @@ export default defineUserConfig({
           // { text: 'jenkins多分支', link: '/jilei/jenkins多分支' },
         ],
       },
+      { text: '关于我', link: '/resume/', icon: 'material-symbols:person-outline' },
       // {
       //   text: 'AI',
       //   icon: 'material-symbols:article-outline',
@@ -73,6 +74,19 @@ export default defineUserConfig({
   description: "css javascript vue js 前端博客",
   head: [
     ["link", { rel: "icon", href: "/EFlong2/favicon.ico" }],
+    [
+      "script",
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?ce5b5e7aef70331f91bf3366eeef2b2b";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `
+    ]
   ],
   base: "/EFlong2/",
 });
